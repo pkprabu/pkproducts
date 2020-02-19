@@ -1,0 +1,25 @@
+<div class="text-center product-spinner" *ngIf="posts.length === 0">
+    <div class="spinner-border text-success"></div>
+</div>
+<div class="container">
+    <div class="row mb-5">
+        <div class="col-sm-4 mt-5" *ngFor="let post of posts | slice:0:50" @fadeIn>
+            <div class="card" (click)="scrollPosition()">
+                <div class="card-header">
+                    <a [routerLink]="['/products', post.id, post.name]"><img src="{{post.imageUrl}}"></a>
+                </div>
+                <div class="card-body">
+                    <p class="mb-0">{{post.name}}</p>
+                    <button [routerLink]="['/products', post.id, post.name]" type="button" class="btn btn-sm btn-outline-success mt-2">More details</button>
+                </div>
+            </div>
+        </div>
+        <div class="search-results" infiniteScroll (scrolled)="onScroll()"> </div>
+    <div class="row mb-5">
+        <div class="col-sm-12">
+            <div class="text-right">
+                <button (click)="goToTop()" type="button" class="btn btn-sm btn-outline-dark mt-2">Go to Top <i class="fas fa-arrow-up"></i></button>
+            </div>
+        </div>
+    </div>
+</div>

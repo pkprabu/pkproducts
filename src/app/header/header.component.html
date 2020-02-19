@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <!-- Brand/logo -->
+    <a class="navbar-brand" routerLink="/products">PK</a>
+    <button (click)="onHumbergerClick()" class="navbar-toggler humberger" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Links -->
+    <div class="collapse navbar-collapse" [class.show]="humberger">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/products" routerLinkActive="active">Products</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/create-product" routerLinkActive="active">Create Product</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/lazy-loading" routerLinkActive="active">Lazy Loading</a>
+        </li>
+    </ul>
+    </div>
+</nav>
